@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Clinica</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 </head>
 <body>
     <div id="app">
@@ -43,10 +44,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
 
-                            <li><a href="">Doctores</a></li>
-                            <li><a href="">Pacientes</a></li>
-                            <li><a href="">Citas</a></li>
-                            <li><a href="">Farmacia</a></li>
+                            <li><a href="{{ route('doctor.index') }}">Doctores</a></li>
+                            <li><a href="{{ route('patient.index') }}">Pacientes</a></li>
+                            <li><a href="{{ route('quote.index') }}">Citas</a></li>
                         
                     </ul>
                 </div>
@@ -58,5 +58,11 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready( function () {
+        $('#tablas').DataTable();
+    });    
+    </script>
 </body>
 </html>

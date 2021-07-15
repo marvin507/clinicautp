@@ -51,6 +51,18 @@ return [
             'logging'  => env('DB_LOGGING', false),
         ],
 
+        'couchdb2' => [    
+            'driver'   => 'couchdb2',
+            'type'     => env('DB_CONNECTION_TYPE2', 'socket'),
+            'host'     => env('DB_HOST2', 'localhost'),
+            'ip'       => env('DB_IP2', null),
+            'port'     => env('DB_PORT2', '5984'),
+            'dbname'   => env('DB_DATABASE2', 'forge'),
+            'user'     => env('DB_USERNAME2', null),
+            'password' => env('DB_PASSWORD2', null),
+            'logging'  => env('DB_LOGGING2', false),
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
