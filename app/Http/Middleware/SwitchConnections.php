@@ -4,32 +4,38 @@ namespace App\Http\Middleware;
 
 use Closure;
 use DB;
-
+use App\Doctor;
 class SwitchConnections
 {
     public function handle($request, Closure $next)
     {
-        try{
-            return $next($request);
-        } catch (\Exception $e) { //Use a proper exception here, depending on which way/database you are connecting
-            $this->switchConnection();
-            return $next($request);
-        }
+        
+        $Host="45.77.193.128";
+
+        exec("ping -n 1 " . $Host, $output, $result);
+
+        if ($result == 0)
+
+        return $next($request);
+
+        else
+
+        $this->switchConnection();
+        return $next($request);
+        
     }
+
+    private function test(){
+        
+            
+     }
 
     private function switchConnection()
     {
-        //here get all connections from config that applies
-        //@todo use a better way to get those db names
-        $dbNames = ['couchdb', 'couchdb2'];
-        foreach($dbNames as $dbName) {
-            try {
-                \DB::connection($dbName)->getDatabaseName();
-                \Config::set('database.default', $dbName);
-                return;
-            } catch (\Exception $e) {
-                continue;
-            }
-        }
+        
+        $dbName = 'couchdb2';
+        $con = \Config::set('database.default', $dbName);
+               
     }
+    
 }

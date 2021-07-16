@@ -6,9 +6,13 @@ Route::get('registro', 'RegistroController@register');
 Route::get('ver', 'RegistroController@ver');
 Route::post('registrar', 'RegistroController@registrar')->name('registrar');
 
-Route::resource('doctor', 'DoctorController');
-Route::resource('patient', 'PatientController');
-Route::resource('quote', 'QuoteController');
+
+
+Route::middleware(['switchDB'])->group(function () {
+    Route::resource('doctor', 'DoctorController');
+    Route::resource('patient', 'PatientController');
+    Route::resource('quote', 'QuoteController');
+});
 
 // DB_CONNECTION=couchdb
 // DB_HOST=45.77.193.128
@@ -18,7 +22,7 @@ Route::resource('quote', 'QuoteController');
 // DB_PASSWORD=Vpn1234.*
 
 // DB_CONNECTION2=couchdb2
-// DB_HOST2=45.77.193.128
+// DB_HOST2=45.77.72.213
 // DB_PORT2=5984
 // DB_DATABASE2=clinica
 // DB_USERNAME2=admin

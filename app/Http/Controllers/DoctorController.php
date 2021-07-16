@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Doctor;
 use PhpParser\Comment\Doc;
-use DB;
 use League\Flysystem\Config;
 
 class DoctorController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +17,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $con = \Config::get('database');
-        //$con["default"];
+        
         $doctors = Doctor::get();
         return view('doctors.index', compact('doctors'));
     }

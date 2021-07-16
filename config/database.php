@@ -52,7 +52,7 @@ return [
         ],
 
         'couchdb2' => [    
-            'driver'   => 'couchdb2',
+            'driver'   => 'couchdb',
             'type'     => env('DB_CONNECTION_TYPE2', 'socket'),
             'host'     => env('DB_HOST2', 'localhost'),
             'ip'       => env('DB_IP2', null),
