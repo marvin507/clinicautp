@@ -36,7 +36,7 @@
 
                 <!-- Select Basic -->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="selectbasic">Doctor</label>
+                  <label class="col-md-4 control-label" for="selectbasic">Paciente</label>
                   <div class="col-md-5">
                     <select id="selectbasic" name="patient_id" class="form-control">
                       <option value="" disabled selected>Seleccione el paciente</option>
