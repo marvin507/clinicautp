@@ -7,11 +7,39 @@
                 <a href="{{ route('doctor.index') }}" class="btn btn-primary btn-sm">Regresar</a>
             </div>
             <div class="panel-body">
-                <h4><strong>Nombre: </strong>{{ $doctor->name }}</h4>
-                <h4><strong>Apellido: </strong>{{ $doctor->surname }}</h4>
-                <h4><strong>Cédula: </strong>{{ $doctor->ced }}</h4>
-                <h4><strong>Dirección: </strong>{{ $doctor->direction }}</h4>
-                <h4><strong>Teléfono: </strong>{{ $doctor->phone }}</h4>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <th>Nombre:</th>
+                        <td>{{ $doctor->name }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Apellido:</th>
+                        <td>{{ $doctor->surname }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Cédula:</th>
+                        <td>{{ $doctor->ced }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Dirección:</th>
+                        <td>{{ $doctor->direction }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Teléfono:</th>
+                        <td>{{ $doctor->phone }}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Email:</th>
+                        <td>{{ $doctor->email }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </div>
         </div>
     </div>
