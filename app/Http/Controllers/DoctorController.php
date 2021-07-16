@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Doctor;
-use PhpParser\Comment\Doc;
-use League\Flysystem\Config;
 
 class DoctorController extends Controller
 {
